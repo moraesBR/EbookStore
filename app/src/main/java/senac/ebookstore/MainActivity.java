@@ -1,6 +1,5 @@
 package senac.ebookstore;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,7 +21,14 @@ import senac.ebookstore.fragments.TabNovels;
 import senac.ebookstore.fragments.TabTechnician;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextMessage;
+
+    /*
+    * Fragments com Bottom Navigation View:
+    *   https://medium.com/@oluwabukunmi.aluko/bottom-navigation-view-with-fragments-a074bfd08711
+    *
+    * Fragments com Tablayout
+    *   https://www.youtube.com/watch?v=HOZ6OR6rKgw
+    */
 
     final Fragment fragment1 = new TabHome();
     final Fragment fragment2 = new TabNovels();
@@ -41,17 +47,14 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     fm.beginTransaction().hide(active).show(fragment1).commit();
                     active = fragment1;
-                    //mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_romances:
                     fm.beginTransaction().hide(active).show(fragment2).commit();
                     active = fragment2;
-                    //mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_negocios:
                     fm.beginTransaction().hide(active).show(fragment3).commit();
                     active = fragment3;
-                    //mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.navigation_tecnicos:
                     fm.beginTransaction().hide(active).show(fragment4).commit();
@@ -60,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_ebook:
                     fm.beginTransaction().hide(active).show(fragment5).commit();
                     active = fragment5;
-                    /*Intent intent = new Intent(getBaseContext(), EbookActivity.class);
-                    startActivity(intent);*/
                     return true;
             }
             return false;
