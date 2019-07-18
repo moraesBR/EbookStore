@@ -9,4 +9,10 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+    <string-array name="authors">
+        <item> John </item>
+        <item> Ronald </item>
+        <item> Reuel </item>
+        <item> Tolkien </item>
+    </string-array>
 </resources>

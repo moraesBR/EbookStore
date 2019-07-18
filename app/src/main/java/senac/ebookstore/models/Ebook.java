@@ -6,60 +6,71 @@ import java.util.List;
 public class Ebook {
     private String title;
     private String urlImage;
-    private String author;
+    private List<String> authors;
     private String resume;
     private Genre genre;
     private String isbn;
+    private boolean selected = false;
 
     public Ebook() {
-
+        this.authors = new ArrayList<>();
     }
+
 
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getUrlImage() {
         return urlImage;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public List<String> getAuthors() {
+        return authors;
     }
 
     public String getResume() {
         return resume;
     }
 
-    public void setResume(String resume) {
-        this.resume = resume;
-    }
-
     public Genre getGenre() {
         return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
     }
 
     public String getIsbn() {
         return isbn;
     }
 
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public void addAuthor(String author) {
+        if(!author.isEmpty())
+            this.authors.add(author);
+    }
+
+    public void setResume(String resume) {
+        this.resume = resume;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

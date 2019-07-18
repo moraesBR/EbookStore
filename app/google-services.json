@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "694521663882-gsh425o15d59m9at34kkf0np7kk4mgpo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "senac.ebookstore",
+            "certificate_hash": "90a1cdb64bbd1876025e78f9346b8223ea6ebe14"
+          }
+        },
+        {
           "client_id": "694521663882-jvsafhekndg0kfgil1uuobr90m408g5b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -26,4 +26,10 @@
     <string name="title_romance">Romances</string>
     <string name="title_negocios">Negócios</string>
     <string name="title_tecnicos">Técnicos</string>
+    <string name="item_book_title">Título:</string>
+    <string name="item_book_genero">Gênero:</string>
+    <string name="item_book_isbn">ISBN:</string>
+    <string name="item_book_resume">Resumo:</string>
+    <string name="item_book_authors">Autores:</string>
+    <string name="item_book_descriptionimage">Cover book</string>
 </resources>

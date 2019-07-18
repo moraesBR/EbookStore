@@ -2,8 +2,8 @@ package senac.ebookstore.models;
 
 public enum Genre {
     NOVEL("Romance"),
-    BUSSINESS("Negócios"),
-    TECH("Técnico");
+    BUSINESS("Negócio"),
+    TECHNICIAN("Técnico");
 
     private final String genre;
 
