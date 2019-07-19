@@ -45,7 +45,7 @@ public class TabNewBook extends Fragment {
             DatabaseReference myRef = database.getReference("ebook-" + ebook.getIsbn());
 
             myRef.setValue(ebook);*/
-            //getFragmentManager().beginTransaction().hide(getFragmentManager().findFragmentByTag("5")).show(getFragmentManager().findFragmentByTag("1")).commit();
+            getFragmentManager().beginTransaction().hide(getFragmentManager().findFragmentByTag("5")).show(getFragmentManager().findFragmentByTag("1")).commit();
             //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container, new Home()).commit();
         }
     };
