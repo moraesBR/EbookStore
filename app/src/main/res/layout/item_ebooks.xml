@@ -12,7 +12,7 @@
         <LinearLayout
             android:layout_margin="@dimen/cardview_margininner"
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:weightSum="3"
             android:baselineAligned="false">
 

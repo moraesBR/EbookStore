@@ -54,7 +54,7 @@ public class Ebook {
     }
 
     public void addAuthor(String author) {
-        if(!author.isEmpty())
+        if (!author.isEmpty())
             this.authors.add(author);
     }
 
@@ -72,5 +72,15 @@ public class Ebook {
 
     public void setSelected(boolean selected) {
         this.selected = selected;
+    }
+
+    @Override
+    public String toString() {
+        return  "\n" + title +
+                "\n" +  urlImage +
+                "\n" + authors.toString() +
+                "\n" + resume +
+                "\n" + genre.toString() +
+                "\n" + isbn;
     }
 }

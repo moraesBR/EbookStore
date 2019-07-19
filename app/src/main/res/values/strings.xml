@@ -32,4 +32,5 @@
     <string name="item_book_resume">Resumo:</string>
     <string name="item_book_authors">Autores:</string>
     <string name="item_book_descriptionimage">Cover book</string>
+    <string name="title">Título:</string>
 </resources>

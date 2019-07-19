@@ -15,4 +15,9 @@
         <item> Reuel </item>
         <item> Tolkien </item>
     </string-array>
+    <string-array name="genre">
+        <item> Negócio </item>
+        <item> Romance </item>
+        <item> Técnico </item>
+    </string-array>
 </resources>
