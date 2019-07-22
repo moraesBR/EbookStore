@@ -1,9 +1,12 @@
 package senac.ebookstore.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ebook {
+public class Ebook implements Parcelable {
     private String title;
     private String urlImage;
     private List<String> authors;
@@ -83,4 +86,44 @@ public class Ebook {
                 "\n" + genre.toString() +
                 "\n" + isbn;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.title);
+        dest.writeString(this.urlImage);
+        dest.writeStringList(this.authors);
+        dest.writeString(this.resume);
+        dest.writeInt(this.genre == null ? -1 : this.genre.ordinal());
+        dest.writeString(this.isbn);
+        dest.writeByte(this.selected ? (byte) 1 : (byte) 0);
+    }
+
+    protected Ebook(Parcel in) {
+        this.title = in.readString();
+        this.urlImage = in.readString();
+        this.authors = in.createStringArrayList();
+        this.resume = in.readString();
+        int tmpGenre = in.readInt();
+        this.genre = tmpGenre == -1 ? null : Genre.values()[tmpGenre];
+        this.isbn = in.readString();
+        this.selected = in.readByte() != 0;
+    }
+
+    public static final Parcelable.Creator<Ebook> CREATOR = new Parcelable.Creator<Ebook>() {
+        @Override
+        public Ebook createFromParcel(Parcel source) {
+            return new Ebook(source);
+        }
+
+        @Override
+        public Ebook[] newArray(int size) {
+            return new Ebook[size];
+        }
+    };
 }

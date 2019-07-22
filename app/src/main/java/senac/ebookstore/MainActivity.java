@@ -14,11 +14,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import senac.ebookstore.fragments.TabBusiness;
 import senac.ebookstore.fragments.TabHome;
 import senac.ebookstore.fragments.TabNewBook;
+import senac.ebookstore.fragments.TabNewBookAux;
 import senac.ebookstore.fragments.TabNovels;
 import senac.ebookstore.fragments.TabTechnician;
+import senac.ebookstore.models.Ebook;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
     *   https://www.youtube.com/watch?v=HOZ6OR6rKgw
     */
 
+    public static List<Ebook> ebookList = new ArrayList<Ebook>();
+
     final Fragment fragment1 = new TabHome();
     final Fragment fragment2 = new TabNovels();
     final Fragment fragment3 = new TabBusiness();
     final Fragment fragment4 = new TabTechnician();
     final Fragment fragment5 = new TabNewBook();
+    final Fragment fragment6 = new TabNewBookAux();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
 
@@ -76,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        fm.beginTransaction().add(R.id.main_container, fragment6, "6").hide(fragment6).commit();
         fm.beginTransaction().add(R.id.main_container, fragment5, "5").hide(fragment5).commit();
         fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
         fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
